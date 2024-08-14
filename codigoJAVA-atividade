@@ -1,0 +1,49 @@
+public class Main {
+    public static void main(String[] args) {
+        // Chama a função para imprimir números de 1 a 100 com uma descrição
+        System.out.println("Números de 1 a 100:");
+        printNumbersFrom1To100();
+
+        // Chama a função para imprimir o somatório dos números ímpares entre 10 e 1000 com uma descrição
+        printSumOfOddsBetween10And1000();
+
+        // Chama a função para imprimir múltiplos de 3 que não terminam em 3 entre 1 e 200
+        System.out.println("Números múltiplos de 3 que não terminam em 3 entre 1 e 200:");
+        printMultiplesOf3NotEndingIn3();
+    }
+
+    // Função 1: Imprime números de 1 a 100 separados por vírgula
+    public static void printNumbersFrom1To100() {
+        for (int i = 1; i <= 100; i++) {
+            if (i < 100) {
+                System.out.print(i + ", ");
+            } else {
+                System.out.print(i);
+            }
+        }
+        System.out.println(); // Nova linha após a lista
+    }
+
+    // Função 2: Imprime o somatório de todos os números ímpares entre 10 e 1000
+    public static void printSumOfOddsBetween10And1000() {
+        int sum = 0;
+        for (int i = 11; i < 1000; i += 2) { // Começa de 11 para garantir que é ímpar e pula de 2 em 2
+            sum += i;
+        }
+        System.out.println("Somatório dos ímpares entre 10 e 1000: " + sum);
+    }
+
+    // Função 3: Imprime todos os números múltiplos de 3 que não terminem em 3 entre 1 e 200
+    public static void printMultiplesOf3NotEndingIn3() {
+        for (int i = 3; i <= 200; i += 3) { // Multiplo de 3
+            if (i % 10 != 3) { // Verifica se não termina em 3
+                if (i < 200) {
+                    System.out.print(i + ", ");
+                } else {
+                    System.out.print(i);
+                }
+            }
+        }
+        System.out.println(); // Nova linha após a lista
+    }
+}
