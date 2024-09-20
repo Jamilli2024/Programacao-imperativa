@@ -8,13 +8,11 @@ public class VetorOrdenado {
         Scanner scanner = new Scanner(System.in);
         int[] valores = new int[10];
 
-        // Solicitar 10 valores ao usuário
         System.out.println("Digite 10 valores:");
         for (int i = 0; i < 10; i++) {
             valores[i] = scanner.nextInt();
         }
 
-        // Verificar se o vetor está ordenado
         boolean ordenado = isOrdenado(valores);
         if (ordenado) {
             System.out.println("O vetor está ordenado.");
@@ -22,7 +20,6 @@ public class VetorOrdenado {
             System.out.println("O vetor não está ordenado.");
         }
 
-        // Laço para busca
         boolean continuar = true;
         while (continuar) {
             System.out.print("Digite o elemento a ser encontrado: ");
@@ -49,7 +46,6 @@ public class VetorOrdenado {
         scanner.close();
     }
 
-    // Método para verificar se o vetor está ordenado
     private static boolean isOrdenado(int[] vetor) {
         for (int i = 1; i < vetor.length; i++) {
             if (vetor[i] < vetor[i - 1]) {
@@ -59,17 +55,15 @@ public class VetorOrdenado {
         return true;
     }
 
-    // Busca simples
     private static int buscaSimples(int[] vetor, int elemento) {
         for (int i = 0; i < vetor.length; i++) {
             if (vetor[i] == elemento) {
-                return i; // Retorna a posição
+                return i; 
             }
         }
-        return -1; // Retorna -1 se não encontrado
+        return -1; 
     }
 
-    // Busca binária
     private static int buscaBinaria(int[] vetor, int elemento) {
         int esquerda = 0;
         int direita = vetor.length - 1;
@@ -78,13 +72,13 @@ public class VetorOrdenado {
             int meio = (esquerda + direita) / 2;
 
             if (vetor[meio] == elemento) {
-                return meio; // Retorna a posição
+                return meio; 
             } else if (vetor[meio] < elemento) {
                 esquerda = meio + 1;
             } else {
                 direita = meio - 1;
             }
         }
-        return -1; // Retorna -1 se não encontrado
+        return -1;
     }
 }
